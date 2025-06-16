@@ -25,8 +25,8 @@ YEARMAX=2060
 #YEARMAX=2019
 L=259200
 MONS="01 02 03 04 05 06 07 08 09 10 11 12"
-VARS="rlds ps huss pr rsds prsn tas sfcwind"
-#VARS="rlds ps huss pr rsds prsn tas sfcwind"
+VARS="rlds ps huss pr rsds prsn tas sfcwind" #ISIMIP
+#VARS="rlds ps huss pr rsds prsn tas sfcwind" #W5E5
 TRESO=DY
 SECINT=86400  # Only DY supported
 
@@ -50,10 +50,8 @@ for VAR in $VARS; do
 
       mkdir -p $DIROUT
 
-#      OUT=${DIROUT}/isim____.hlf
-#      NC=../../met/org/ISIMIP/mri-esm2-0_r1i1p1f1_w5e5_ssp370_${VAR}_global_daily_${YEARMIN}_${YEARMAX}.nc
-      OUT=${DIROUT}/ISS1____.hlf
-      NC=../../met/org/ISIMIP/mri-esm2-0_r1i1p1f1_w5e5_ssp126_${VAR}_global_daily_${YEARMIN}_${YEARMAX}.nc
+      OUT=${DIROUT}/M370____.hlf
+      NC=../../met/org/ISIMIP/mri-esm2-0_r1i1p1f1_w5e5_ssp370_${VAR}_global_daily_${YEARMIN}_${YEARMAX}.nc
 #      OUT=${DIROUT}/W5E5____.hlf
 #      NC=/work/common/H08/met_data/W5E5v2.0_Lang_2021/${VAR}_W5E5v2.0_${YEARMIN}0101-${YEARMAX}1231.nc
       TMPNC=tmp_${VAR}_${YEAR}${MON}.nc
